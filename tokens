@@ -1,0 +1,23 @@
+public static void main(String[] args) {
+try {
+  LinkedList<String> lTokens = new LinkedList<String>( );
+  FileReader leitura = new FileReader("c:/pasta/tokens.txt");
+  BufferedReader brLeitura = new BufferedReader(leitura);
+  while (brLeitura.ready()) {
+    String str = brLeitura.readLine();
+    String tokens[] = str.split(" ");
+    for(String aux:tokens) { 
+      lTokens.add(aux);
+    }
+    }
+  brLeitura.close();
+  leitura.close();
+  } 
+  catch (FileNotFoundException e) {
+    e.printStackTrace();
+  } 
+  catch (IOException e) {
+    e.printStackTrace();
+  }
+}
+
